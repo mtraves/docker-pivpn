@@ -125,8 +125,8 @@ build_run() {
         echo "Architecture not supported"
     fi
 
-    if [ -e $tag/Dockerfile ]; then
-        docker build $tag -t docker-pivpn:$tag
+    if [ -e docker-pivpn/$tag/Dockerfile ]; then
+        docker build docker-pivpn/$tag -t docker-pivpn:$tag
     else
         echo "Dockerfile does not exist, will not build. Defaulting to pull"
         pull
